@@ -1,9 +1,6 @@
 package main.java.pluralsight;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class CollectionsDemo {
 
@@ -29,10 +26,11 @@ public class CollectionsDemo {
 				
 		*/
 		//List - maintains order, allowed duplicates
-		List<Person> list = new ArrayList<>();
-		list.add(0,person1);
-		list.add(1,person2);
-		list.add(2,person3);
+		Set<Person> list = new HashSet<>();
+		list.add(person1);
+		list.add(person2);
+		list.add(person3);
+		list.add(person1);
 		// Java 7
 		for (Person s : list) {
 			     System.out.println("In Java 7 : "+s.getName());
@@ -46,18 +44,18 @@ public class CollectionsDemo {
 		Set<Person> set = new HashSet<>();	
 		set.add(person1);
 		*/
-				
-		System.out.println(list);
-		Collections.sort(list, new AgeComparator());
-		System.out.println(list.toString());
-
-		Collections.sort(list,
-				new Comparator<Person>() {
-					@Override
-					public int compare(final Person o1, final Person o2) {
-						return Integer.compare(o1.getAge(), o2.getAge());
-					}
-				});
+//
+//		System.out.println(list);
+//		Collections.sort(list, new AgeComparator());
+//		System.out.println(list.toString());
+//
+//		Collections.sort(list,
+//				new Comparator<Person>() {
+//					@Override
+//					public int compare(final Person o1, final Person o2) {
+//						return Integer.compare(o1.getAge(), o2.getAge());
+//					}
+//				});
 
 		//list.stream().mapToInt(i->i).sum();
 	}
