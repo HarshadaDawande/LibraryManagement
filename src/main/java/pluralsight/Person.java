@@ -1,4 +1,4 @@
-package main.java.pluralsight;
+package pluralsight;
 
 import java.util.Objects;
 import java.util.Optional;

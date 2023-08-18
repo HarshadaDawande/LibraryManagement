@@ -1,9 +1,8 @@
-package main.java.pluralsight;
+package pluralsight;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
 public class CollectorsDemo {
 
     public static List<Person> createPeople(){

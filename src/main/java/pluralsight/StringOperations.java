@@ -1,5 +1,9 @@
 package main.java.pluralsight;
 
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
 /*
 Whenever it is invoked on the same object more than once during an execution of a Java application,
 hashCode() must consistently return the same value,
@@ -18,5 +22,17 @@ public class StringOperations {
         System.out.println(str1.equals(str2));
         System.out.println(str1.hashCode());
         System.out.println(str2.hashCode());
+
+
+        String firstName = "Harshada";
+        String middleName = "Vijay";
+        String lastName = "Joshi";
+
+        String fullName = Arrays.asList(firstName, middleName, lastName).stream()
+                .filter(Objects::nonNull)
+                .filter(String::isEmpty)
+                .collect(Collectors.joining(" "));
+        System.out.println(fullName);
+
     }
 }

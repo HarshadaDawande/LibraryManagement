@@ -1,16 +1,15 @@
 package main.java.pluralsight;
 
-import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
 
 public class MapReduceDemo {
 
     public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(1,2,2,3,4,5,6,7,7,8,9);
-        int sum = numbers.stream().mapToInt(i->i).sum();
+        List<Integer> numbers = Arrays.asList(1, 2, 2, 3, 4, 5, 6, 7, 7, 8, 9);
+        int sum = numbers.stream().mapToInt(i -> i).sum();
         //System.out.println(sum);
 
         // SORTED AND DISTINCT
@@ -27,13 +26,13 @@ public class MapReduceDemo {
         Integer multiplicationOfAll = numbers.stream().reduce(1, (a, b) -> a * b);
         System.out.println(multiplicationOfAll);
 
-        int maxNumber = numbers.stream().reduce(0,(a,b)->(a>b?a:b));
+        int maxNumber = numbers.stream().reduce(0, (a, b) -> (a > b ? a : b));
         System.out.println(maxNumber);
         // Method reference
         int maxWithMethodReference = numbers.stream().reduce(Integer::max).get();
         System.out.println(maxWithMethodReference);
 
         //var sum BigDecimal = numbers.stream().reduce(BigDecimal.add).get();
-
+        boolean isFound = numbers.stream().anyMatch(num -> num == 2);
     }
 }

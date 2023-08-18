@@ -1,6 +1,6 @@
 package main.java.pluralsight;
 
-import com.sun.glass.ui.Clipboard;
+//import com.sun.glass.ui.Clipboard;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -42,7 +42,7 @@ public class StreamDemo {
                     total = 0;
                     continue;
                 }
-                total += Integer.valueOf(streamValue);
+                total += Integer.parseInt(streamValue);
 
             }
             sumList.add(total);
